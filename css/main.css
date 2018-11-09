@@ -424,12 +424,25 @@ h6 {
 
 /* Tables */
 table {
+  width: 100%;
   margin-top: 1.5rem;
   border-spacing: 0px;
-  border-collapse: collapse; }
+  border-width: 0;
+  border-collapse: collapse;
+  table-layout: fixed; }
   table td, table th {
-    padding: 0;
-    line-height: 33px; }
+    word-wrap: break-word;
+    padding: 0px 0px;
+    min-width: 100%;
+    text-align: left;
+    line-height: 33px;
+    text-align: center; }
+  table td {
+    font-size: 0.8rem; }
+
+/* Columns */
+col {
+  display: table-column; }
 
 /* Code blocks */
 code {
@@ -442,6 +455,24 @@ code {
 /* Hug a the block above you */
 .hug {
   margin-top: 0; }
+
+/* Topmost on a page */
+.topmost {
+  margin-top: 0; }
+
+/* Annotation labels */
+.annotation {
+  text-align: center;
+  font-size: 0.7rem; }
+
+.copyright {
+  text-align: right;
+  font-size: 0.7rem; }
+
+.footnote {
+  margin-top: 0;
+  text-align: left;
+  font-size: 0.6rem; }
 
 a {
   color: #2980b9; }
@@ -505,3 +536,8 @@ footer {
   .cat-visual a {
     color: #934CF7;
     text-decoration: none; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 3%; }
