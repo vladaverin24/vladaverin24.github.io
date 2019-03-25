@@ -32,185 +32,36 @@
 </h3>
 
 <div style="margin-top: 2rem">
-  <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+  <div id="map" style="height: 400px; width: 100%;"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(36.691, -33.898),
+          zoom: 0,
+          mapTypeId: 'roadmap'
+        });
 
-<div id="mapdiv" class="map" style="background-color: transparent;"></div>
-<div style="width: 100%; font-size: 70%; padding: 5px 0; text-align: center; background-color: transparent; margin-top: 1px"></div>
-
-<script type="text/javascript">
-var map = AmCharts.makeChart("mapdiv",{
-type: "map",
-theme: "dark",
-projection: "mercator",
-panEventsEnabled : true,
-backgroundColor : "transparent",
-backgroundAlpha : 0,
-zoomControl: {
-zoomControlEnabled : true
-},
-dataProvider : {
-map : "worldHigh",
-getAreasFromMap : true,
-areas :
-[
-    {
-        "id": "AT",
-        "showAsSelected": true
-    },
-    {
-        "id": "BY",
-        "showAsSelected": true
-    },
-    {
-        "id": "BE",
-        "showAsSelected": true
-    },
-    {
-        "id": "CZ",
-        "showAsSelected": true
-    },
-    {
-        "id": "DK",
-        "showAsSelected": true
-    },
-    {
-        "id": "FI",
-        "showAsSelected": true
-    },
-    {
-        "id": "FR",
-        "showAsSelected": true
-    },
-    {
-        "id": "DE",
-        "showAsSelected": true
-    },
-    {
-        "id": "GR",
-        "showAsSelected": true
-    },
-    {
-        "id": "HU",
-        "showAsSelected": true
-    },
-    {
-        "id": "IT",
-        "showAsSelected": true
-    },
-    {
-        "id": "NL",
-        "showAsSelected": true
-    },
-    {
-        "id": "NO",
-        "showAsSelected": true
-    },
-    {
-        "id": "PL",
-        "showAsSelected": true
-    },
-    {
-        "id": "PT",
-        "showAsSelected": true
-    },
-    {
-        "id": "RU",
-        "showAsSelected": true
-    },
-    {
-        "id": "ES",
-        "showAsSelected": true
-    },
-    {
-        "id": "SE",
-        "showAsSelected": true
-    },
-    {
-        "id": "CH",
-        "showAsSelected": true
-    },
-    {
-        "id": "TR",
-        "showAsSelected": true
-    },
-    {
-        "id": "UA",
-        "showAsSelected": true
-    },
-    {
-        "id": "VA",
-        "showAsSelected": true
-    },
-    {
-        "id": "CA",
-        "showAsSelected": true
-    },
-    {
-        "id": "US",
-        "showAsSelected": true
-    },
-    {
-        "id": "KH",
-        "showAsSelected": true
-    },
-    {
-        "id": "CN",
-        "showAsSelected": true
-    },
-    {
-        "id": "HK",
-        "showAsSelected": true
-    },
-    {
-        "id": "ID",
-        "showAsSelected": true
-    },
-    {
-        "id": "IL",
-        "showAsSelected": true
-    },
-    {
-        "id": "JP",
-        "showAsSelected": true
-    },
-    {
-        "id": "MO",
-        "showAsSelected": true
-    },
-    {
-        "id": "MY",
-        "showAsSelected": true
-    },
-    {
-        "id": "TH",
-        "showAsSelected": true
-    },
-    {
-        "id": "AE",
-        "showAsSelected": true
-    }
-]
-},
-areasSettings : {
-autoZoom : false,
-color : "#B4B4B7",
-colorSolid : "#FC5B57",
-selectedColor : "#FC5B57",
-outlineColor : "#666666",
-rollOverColor : "#D6D6D6",
-rollOverOutlineColor : "#000000"
+    var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1zFEQYMPUNaG6RqOiOqeu1Yz1Rz2qD2yi';
+    var kmlLayer = new google.maps.KmlLayer(src, {
+      suppressInfoWindows: true,
+      preserveViewport: false,
+      map: map
+    });
 }
-});
-</script>
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+         <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpPttC9P3id6kB5yG9bz1i9xdiI-tTSLk&callback=initMap">
+    </script>
 
-<p><div class="annotation">
-    <em>Visited countries are marked with red color</em>
-  </div>
-</div></p>
+</div>
 
-<div style="margin-left: auto;, margin-right: auto; width: 80%;">
+<div style="margin-left: 0;, margin-right: auto; width: 80%;">
   <div class="data-container">
     <div class="data-block">
       <table>
@@ -331,7 +182,29 @@ rollOverOutlineColor : "#000000"
           <td>Canada 🇨🇦</td>
         </tr>
         <tr>
+          <td>Mexico 🇲🇽</td>
+        </tr>
+        <tr>
           <td>United States 🇺🇸</td>
+        </tr>
+      </table>
+    </div>
+    <div class="data-block">
+      <table>
+        <tr>
+          <th>Caribbean</th>
+        </tr>
+        <tr>
+          <td>Bahamas 🇧🇸</td>
+        </tr>
+        <tr>
+          <td>Cayman Islands 🇰🇾</td>
+        </tr>
+        <tr>
+          <td>Dominican Republic 🇩🇴</td>
+        </tr>
+        <tr>
+          <td>Jamaica 🇯🇲</td>
         </tr>
       </table>
     </div>
@@ -342,7 +215,7 @@ rollOverOutlineColor : "#000000"
     </div>
 
     <footer class="site-footer">
-  <p style="width: 90%" class="copyright">© 2018 Vlad Averin</p>
+  <p style="width: 90%" class="copyright">Last updated: Mar 24, 2019<br>© 2019 Vlad Averin</p>
 </footer>
 
 
