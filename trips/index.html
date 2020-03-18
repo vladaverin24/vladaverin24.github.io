@@ -31,36 +31,6 @@
 <a href="/">Traveller</a>
 </h3>
 
-<div style="margin-top: 2rem">
-  <div id="map" style="height: 400px; width: 100%;"></div>
-    <script>
-// Initialize and add the map
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(36.691, -33.898),
-          zoom: 0,
-          mapTypeId: 'roadmap'
-        });
-
-    var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1zFEQYMPUNaG6RqOiOqeu1Yz1Rz2qD2yi';
-    var kmlLayer = new google.maps.KmlLayer(src, {
-      suppressInfoWindows: true,
-      preserveViewport: false,
-      map: map
-    });
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-         <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpPttC9P3id6kB5yG9bz1i9xdiI-tTSLk&callback=initMap">
-    </script>
-
-</div>
-
 <div style="margin-left: 0;, margin-right: auto; width: 80%;">
   <div class="data-container">
     <div class="data-block">
@@ -179,13 +149,31 @@ function initMap() {
           <th>Americas</th>
         </tr>
         <tr>
+          <td>Argentina 🇦🇷</td>
+        </tr>
+        <tr>
+          <td>Brazil 🇧🇷</td>
+        </tr>
+        <tr>
           <td>Canada 🇨🇦</td>
+        </tr>
+        <tr>
+          <td>Chile 🇨🇱</td>
+        </tr>
+        <tr>
+          <td>Ecuador 🇪🇨</td>
         </tr>
         <tr>
           <td>Mexico 🇲🇽</td>
         </tr>
         <tr>
+          <td>Peru 🇵🇪</td>
+        </tr>
+        <tr>
           <td>United States 🇺🇸</td>
+        </tr>
+        <tr>
+          <td>Uruguay 🇺🇾</td>
         </tr>
       </table>
     </div>
@@ -215,7 +203,7 @@ function initMap() {
     </div>
 
     <footer class="site-footer">
-  <p style="width: 90%" class="copyright">Last updated: Sep 28, 2019<br>© 2019 Vlad Averin</p>
+  <p style="width: 90%" class="copyright">Last updated: Mar 18, 2020<br>© 2020 Vlad Averin</p>
 </footer>
 
 
